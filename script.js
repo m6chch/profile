@@ -74,49 +74,74 @@ particlesJS('particles-js', {
 
 
 // 2. スクロール時の要素アニメーション (Intersection Observer APIを使用)
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.content-section');
+const sections = document.querySelectorAll('.content-section');
 
-    const observerOptions = {
-        root: null, // ビューポートをルートとする
-        rootMargin: '0px',
-        threshold: 0.1 // 要素が10%見えたら実行
+const observerOptions = {
+    root: null, 
+    rootMargin: '0px',
+    threshold: 0.1 
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+// スキルのプログレスバーアニメーション
+const skillsSection = document.getElementById('skills');
+
+const skillObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const widthValue = bar.style.width;
+                bar.style.width = '0'; 
+                setTimeout(() => {
+                    bar.style.width = widthValue;
+                }, 100); 
+            });
+            skillObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 }); 
+
+skillObserver.observe(skillsSection);
+
+
+// 3. 背景BGM再生処理の追加
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('background-audio');
+
+    // [重要] 音量を10%に設定
+    audio.volume = 0.1;
+
+    // 初回再生を試みる（ブラウザが許可すれば再生される）
+    audio.play().catch(error => {
+        console.log("Audio playback blocked, waiting for user interaction.");
+    });
+    
+    // ユーザーがクリックしたときにミュートを解除し、再生を再試行する
+    const enableAudio = () => {
+        if (audio.muted) {
+            audio.muted = false; // ミュート解除
+            // 再生を確実に開始 (play()はユーザー操作後なら成功しやすい)
+            audio.play().catch(e => console.error("Audio playback error after user gesture:", e));
+        }
+        // イベントリスナーは一度実行したら不要なので削除
+        document.removeEventListener('click', enableAudio);
+        document.removeEventListener('touchend', enableAudio);
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // 要素が見えたら visible クラスを追加
-                entry.target.classList.add('visible');
-                // 一度表示されたら監視を停止（無駄な処理を防ぐ）
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // 3. スキルのプログレスバーをアニメーションさせる
-    const skillsSection = document.getElementById('skills');
-
-    const skillObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBars = document.querySelectorAll('.progress-bar');
-                progressBars.forEach(bar => {
-                    // CSSで設定した width を再適用してアニメーションをトリガー
-                    const widthValue = bar.style.width;
-                    bar.style.width = '0'; // 一旦0に戻す（念のため）
-                    setTimeout(() => {
-                        bar.style.width = widthValue;
-                    }, 100); // わずかな遅延を入れてアニメーションを確実に発火
-                });
-                skillObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 }); // スキルセクションが半分見えたら発火
-
-    skillObserver.observe(skillsSection);
+    // ユーザー操作を待つリスナーを追加（PCとモバイルの両方に対応）
+    document.addEventListener('click', enableAudio);
+    document.addEventListener('touchend', enableAudio);
 });
