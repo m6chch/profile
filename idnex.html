@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>まっちゃ - Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero-section">
+        <canvas id="particles-js"></canvas> <div class="hero-content">
+            <img src="97f91f4a24f44da708fdbd7e5bd9e20b.jpg" alt="プロフィール画像" class="profile-image">
+            <h1 class="fade-in">まっちゃ</h1>
+            <p class="fade-in delay-1">Blue Serenity</p>
+            <a href="#about" class="cta-button fade-in delay-2">詳しく見る</a>
+        </div>
+    </header>
+
+    <section id="about" class="content-section hidden">
+        <div class="container">
+            <h2>🍵 自己紹介</h2>
+            <p>「まっちゃ」として活動しています。主に石垢を作って適当に売っています。</p>
+        </div>
+    </section>
+
+    <section id="skills" class="content-section accent-bg hidden">
+        <div class="container">
+            <h2>💡 スキル</h2>
+            <p>現在、以下の技術を学習中です。</p>
+
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>HTML</h3>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
+                    <span class="skill-level">基礎固め完了</span>
+                </div>
+                <div class="skill-item">
+                    <h3>CSS</h3>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 70%;"></div></div>
+                    <span class="skill-level">アニメーション/レイアウト練習中</span>
+                </div>
+                <div class="skill-item">
+                    <h3>JavaScript (JS)</h3>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 55%;"></div></div>
+                    <span class="skill-level">DOM操作、基礎文法学習中</span>
+                </div>
+                <div class="skill-item">
+                    <h3>C言語</h3>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 40%;"></div></div>
+                    <span class="skill-level">基礎的なアルゴリズム学習中</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="content-section hidden">
+        <div class="container">
+            <h2>✉️ 連絡先</h2>
+            <div class="contact-links">
+                <a href="#" class="contact-item" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord Icon">
+                    Discord ID: **bm7c**
+                </a>
+                <a href="#" class="contact-item disabled">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="X Icon">
+                    X (Twitter): **未定** (アカウント準備中)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 まっちゃ Profile.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
