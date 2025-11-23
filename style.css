@@ -1,0 +1,291 @@
+/* 変数定義 */
+:root {
+    --color-primary: #1e88e5; /* 落ち着いた青 */
+    --color-accent: #42a5f5;  /* 明るい青 */
+    --color-background: #0f192b; /* ダークネイビー */
+    --color-text: #e0e0e0;
+    --color-light: #ffffff;
+    --color-border: #294c7a;
+    --transition-speed: 0.4s;
+}
+
+/* 基本リセットとフォント */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--color-light);
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-light);
+}
+
+h2 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+/* --- ヒーローセクション --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(135deg, #1f4287 0%, #001f40 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-light);
+    box-shadow: 0 0 20px rgba(66, 165, 245, 0.8);
+    margin-bottom: 20px;
+    /* 初期アニメーション */
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    animation: image-float-in 1s ease-out forwards;
+}
+
+@keyframes image-float-in {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px var(--color-accent);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* テキストフェードインアニメーション */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+
+
+/* CTAボタン */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid var(--color-accent);
+    color: var(--color-light);
+    background: transparent;
+    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    background-color: var(--color-accent);
+    box-shadow: 0 0 15px var(--color-accent);
+    color: var(--color-background);
+}
+
+
+/* --- コンテンツセクション --- */
+.content-section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.accent-bg {
+    background-color: #1a2741; /* セクションの背景色を変えてメリハリをつける */
+}
+
+/* スクロール時アニメーションの初期状態 */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* スクロール時アニメーション後の状態 (JSで付与) */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- スキルセクション --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.skill-item {
+    background-color: var(--color-background);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(30, 136, 229, 0.3);
+}
+
+.skill-item h3 {
+    margin-top: 0;
+    color: var(--color-accent);
+}
+
+.progress-bar-container {
+    background-color: #333;
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, #42a5f5, #1e88e5);
+    transition: width 1.5s ease; /* JSで幅をセットする際の滑らかなアニメーション */
+}
+
+.skill-level {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+}
+
+/* --- 連絡先セクション --- */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 20px auto 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #1a2741;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.contact-item:hover {
+    background-color: #1f4287;
+    border-color: var(--color-accent);
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    filter: invert(80%) sepia(100%) saturate(2000%) hue-rotate(180deg); /* アイコンを青くする */
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.disabled:hover {
+    background-color: #1a2741;
+    border-color: var(--color-border);
+}
+
+
+/* --- フッター --- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #0c1422;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* --- レスポンシブ対応 --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .content-section {
+        padding: 60px 0;
+    }
+}
