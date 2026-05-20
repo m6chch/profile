@@ -3,81 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Macha / Noroma - Official Site</title>
+    <title>まっちゃ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background-overlay"></div>
-    
     <header>
-        <h1>My Hub</h1>
+        <h1>まっちゃ</h1>
         <nav>
-            <a href="#discord">Discord</a>
-            <a href="#works">Works</a>
-            <a href="#profile">Profile</a>
+            <a href="#profile">プロフィール</a>
+            <a href="#discord">Discordサーバー</a>
+            <a href="#hobbies">活動・趣味</a>
         </nav>
     </header>
 
     <main>
-        <!-- 第一目的：Discordコミュニティ -->
-        <section id="discord" class="fade-in">
-            <h2>Community Server</h2>
-            <div class="discord-container card">
-                <div class="discord-info">
-                    <h3>各種代行・販売・配布 実施中</h3>
-                    <ul class="service-list">
-                        <li>🎮 にゃんこ大戦争の自動代行</li>
-                        <li>🧩 ぷにぷに・ツムツムの代行</li>
-                        <li>💎 各ゲームの石垢販売</li>
-                        <li>📦 業者パック・SNS垢・動画視聴サブスク垢販売</li>
-                        <li>🎁 抽選でのPayPay配布</li>
-                    </ul>
-                    
-                    <div class="online-status">
-                        <span class="status-dot"></span>
-                        <span id="online-count">Loading online members...</span>
-                    </div>
-
-                    <a href="https://discord.gg/bm7c" target="_blank" rel="noopener" class="btn">Discordに参加する</a>
-                </div>
-                
-                <div class="discord-widget">
-                    <iframe src="https://discord.com/widget?id=1448245012239356027&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                </div>
+        <!-- プロフィールセクション -->
+        <section id="profile" class="fade-in">
+            <img src="profile.png" alt="プロフィールアイコン" class="profile-icon">
+            <h2>プロフィール</h2>
+            <div class="card center-content">
+                <p>PythonやJavaScriptを用いたDiscord Botの開発を行っています。ユーザーにとって使いやすく、処理の重くならない快適な機能実装を目指して日々コードを書いています。</p>
             </div>
         </section>
 
-        <!-- 第二目的：自分のこと・制作物 -->
-        <section id="works" class="fade-in">
-            <h2>My Creations</h2>
+        <section id="discord" class="fade-in">
+            <h2>Discordサーバー</h2>
+            <div class="card center-content">
+                <h3>ゲーム・開発サポートコミュニティ</h3>
+                <p>自身が開発したBotの運用や、ゲームのマルチプレイ・サポートを行うサーバーを運営しています。自動チケットシステムなどを導入し、スムーズなやり取りができる環境を構築しています。</p>
+                <a href="#" class="btn">サーバーに参加する</a>
+            </div>
+        </section>
+
+        <!-- 趣味・活動セクション -->
+        <section id="hobbies" class="fade-in">
+            <h2>活動・趣味</h2>
             <div class="card-container">
                 <div class="card">
-                    <h3>Discord BOT</h3>
-                    <p>Pythonを使用して開発。コミュニティ管理や便利機能を実装したオリジナルBOTです。</p>
+                    <h3>Bot開発</h3>
+                    <p>M BOTからより高性能なB BOTへの移行など、大規模なサーバーへの導入と安定稼働を前提としたシステム構築を行っています。</p>
                 </div>
                 <div class="card">
-                    <h3>Music Player Site</h3>
-                    <p>HTML, CSS, JavaScriptを活用して作成した自分用の音楽再生サイトです。</p>
+                    <h3>サーバー運用</h3>
+                    <p>Minecraft統合版（Bedrock Edition）のマルチプレイサーバーの構成管理や、アドオンの導入、パフォーマンスの最適化などを実践しています。</p>
                 </div>
                 <div class="card">
-                    <h3>Profile Site</h3>
-                    <p>このサイト自体も、フロントエンド技術を用いて自作しています。</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 第三目的：趣味やパーソナリティ -->
-        <section id="profile" class="fade-in">
-            <h2>About Me</h2>
-            <div class="profile-header">
-                <img src="profile.png" alt="Profile Icon" class="profile-icon">
-                <div class="profile-text">
-                    <p><strong>Hobbies:</strong></p>
-                    <ul class="hobby-list">
-                        <li>⌨️ タイピング</li>
-                        <li>⛏️ マインクラフト (Bedrock Edition等でのマルチプレイ・サーバー構築)</li>
-                        <li>📚 漫画・アニメ鑑賞 (最近はラブコメ系がお気に入り)</li>
-                    </ul>
+                    <h3>音楽</h3>
+                    <p>作業中はSekai No OwariやRADWIMPSの楽曲などをよく聴いています。自作の音楽再生用Webアプリケーションの開発など、趣味をプログラミングに活かすこともあります。</p>
                 </div>
             </div>
         </section>
