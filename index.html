@@ -3,84 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>まっちゃ - Profile</title>
+    <title>Macha / Noroma - Official Site</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <audio id="background-audio" loop muted>
-        <source src="みなみかぜ.m4a" type="audio/mp4">
-        Your browser does not support the audio element.
-    </audio>
-    <header class="hero-section">
-        <canvas id="particles-js"></canvas> 
-        <div class="hero-content">
-            <img src="97f91f4a24f44da708fdbd7e5bd9e20b.jpg" alt="プロフィール画像" class="profile-image">
-            <h1 class="fade-in">まっちゃ</h1>
-            <p class="fade-in delay-1">Blue Serenity</p>
-            <a href="#about" class="cta-button fade-in delay-2">詳しく見る</a>
-        </div>
+    <div class="background-overlay"></div>
+    
+    <header>
+        <h1>My Hub</h1>
+        <nav>
+            <a href="#discord">Discord</a>
+            <a href="#works">Works</a>
+            <a href="#profile">Profile</a>
+        </nav>
     </header>
 
-    <section id="about" class="content-section hidden">
-        <div class="container">
-            <h2>🍵 自己紹介</h2>
-            <p>「まっちゃ」として活動しています。主に石垢を作って適当に売っています。</p>
-        </div>
-    </section>
+    <main>
+        <!-- 第一目的：Discordコミュニティ -->
+        <section id="discord" class="fade-in">
+            <h2>Community Server</h2>
+            <div class="discord-container card">
+                <div class="discord-info">
+                    <h3>各種代行・販売・配布 実施中</h3>
+                    <ul class="service-list">
+                        <li>🎮 にゃんこ大戦争の自動代行</li>
+                        <li>🧩 ぷにぷに・ツムツムの代行</li>
+                        <li>💎 各ゲームの石垢販売</li>
+                        <li>📦 業者パック・SNS垢・動画視聴サブスク垢販売</li>
+                        <li>🎁 抽選でのPayPay配布</li>
+                    </ul>
+                    
+                    <div class="online-status">
+                        <span class="status-dot"></span>
+                        <span id="online-count">Loading online members...</span>
+                    </div>
 
-    <section id="skills" class="content-section accent-bg hidden">
-        <div class="container">
-            <h2>💡 スキル</h2>
-            <p>現在、以下の技術を学習中です。</p>
-
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <h3>HTML</h3>
-                    <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
-                    <span class="skill-level">基礎固め完了</span>
+                    <a href="https://discord.gg/bm7c" target="_blank" rel="noopener" class="btn">Discordに参加する</a>
                 </div>
-                <div class="skill-item">
-                    <h3>CSS</h3>
-                    <div class="progress-bar-container"><div class="progress-bar" style="width: 70%;"></div></div>
-                    <span class="skill-level">アニメーション/レイアウト練習中</span>
-                </div>
-                <div class="skill-item">
-                    <h3>JavaScript (JS)</h3>
-                    <div class="progress-bar-container"><div class="progress-bar" style="width: 55%;"></div></div>
-                    <span class="skill-level">DOM操作、基礎文法学習中</span>
-                </div>
-                <div class="skill-item">
-                    <h3>C言語</h3>
-                    <div class="progress-bar-container"><div class="progress-bar" style="width: 40%;"></div></div>
-                    <span class="skill-level">基礎的なアルゴリズム学習中</span>
+                
+                <div class="discord-widget">
+                    <iframe src="https://discord.com/widget?id=1448245012239356027&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="content-section hidden">
-        <div class="container">
-            <h2>✉️ 連絡先</h2>
-            <div class="contact-links">
-                <a href="#" class="contact-item" target="_blank" rel="noopener noreferrer">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord Icon">
-                    Discord ID: **bm7c**
-                </a>
-                <a href="#" class="contact-item disabled">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="X Icon">
-                    X (Twitter): **未定** (アカウント準備中)
-                </a>
+        <!-- 第二目的：自分のこと・制作物 -->
+        <section id="works" class="fade-in">
+            <h2>My Creations</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Discord BOT</h3>
+                    <p>Pythonを使用して開発。コミュニティ管理や便利機能を実装したオリジナルBOTです。</p>
+                </div>
+                <div class="card">
+                    <h3>Music Player Site</h3>
+                    <p>HTML, CSS, JavaScriptを活用して作成した自分用の音楽再生サイトです。</p>
+                </div>
+                <div class="card">
+                    <h3>Profile Site</h3>
+                    <p>このサイト自体も、フロントエンド技術を用いて自作しています。</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 まっちゃ Profile.</p>
-    </footer>
+        <!-- 第三目的：趣味やパーソナリティ -->
+        <section id="profile" class="fade-in">
+            <h2>About Me</h2>
+            <div class="profile-header">
+                <img src="profile.png" alt="Profile Icon" class="profile-icon">
+                <div class="profile-text">
+                    <p><strong>Hobbies:</strong></p>
+                    <ul class="hobby-list">
+                        <li>⌨️ タイピング</li>
+                        <li>⛏️ マインクラフト (Bedrock Edition等でのマルチプレイ・サーバー構築)</li>
+                        <li>📚 漫画・アニメ鑑賞 (最近はラブコメ系がお気に入り)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
